@@ -164,5 +164,6 @@ position = Vector2(176, -70)
 zoom = Vector2(2.76, 2.76)
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=1382810391]
-position = Vector2(178, -112)
+position = Vector2(57.000023, -105)
+scale = Vector2(0.515625, 0.5625)
 texture = ExtResource("2_yqjtg")
