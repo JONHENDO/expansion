@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://beamv6cptfwii"]
 
 [ext_resource type="Texture2D" uid="uid://oekudlsupest" path="res://assets/Terrain (16x16).png" id="1_uwrxv"]
+[ext_resource type="Texture2D" uid="uid://bnjpj4e2pjxk4" path="res://icon.svg" id="2_yqjtg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yqjtg"]
 texture = ExtResource("1_uwrxv")
@@ -161,3 +162,7 @@ tile_set = SubResource("TileSet_lnu2h")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1491061773]
 position = Vector2(176, -70)
 zoom = Vector2(2.76, 2.76)
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1382810391]
+position = Vector2(178, -112)
+texture = ExtResource("2_yqjtg")
