@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://djbfi8xxbbji4"]
+
+[ext_resource type="Script" uid="uid://dr341tuk0bnq8" path="res://scripts/enemy.gd" id="1_4ra3w"]
+[ext_resource type="Texture2D" uid="uid://bb6sdj6do7k1a" path="res://assets/placeholders_enemy_friendly.png" id="1_7p1mj"]
+[ext_resource type="PackedScene" uid="uid://coxng75upns3p" path="res://scenes/killzone.tscn" id="2_md0e3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md0e3"]
+atlas = ExtResource("1_7p1mj")
+region = Rect2(24, 4, 24, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4ra3w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md0e3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5uy6h"]
+radius = 4.0
+
+[node name="enemy" type="Node2D" unique_id=998517972]
+script = ExtResource("1_4ra3w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1576558801]
+position = Vector2(0, -7)
+sprite_frames = SubResource("SpriteFrames_4ra3w")
+
+[node name="Killzone" parent="AnimatedSprite2D" unique_id=779975342 instance=ExtResource("2_md0e3")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Killzone" unique_id=378417188]
+position = Vector2(1, 3)
+shape = SubResource("CircleShape2D_5uy6h")
+
+[node name="raycastRight" type="RayCast2D" parent="." unique_id=682015144]
+position = Vector2(0, -4)
+target_position = Vector2(9, 0)
+
+[node name="raycastLeft" type="RayCast2D" parent="." unique_id=789860197]
+position = Vector2(0, -4)
+target_position = Vector2(-9, 0)

@@ -5,9 +5,21 @@ const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var collision_crouch: CollisionShape2D = $CollisionCrouch
+@onready var collision_standing: CollisionShape2D = $CollisionStanding
+
 
 
 func _physics_process(delta: float) -> void:
+	
+	if Input.is_action_pressed("crouch"):
+		collision_crouch.disabled = false
+		collision_standing.disabled = true
+	else:
+		collision_crouch.disabled = true
+		collision_standing.disabled = false
+	
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -37,5 +49,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+		
+	
 
 	move_and_slide()
