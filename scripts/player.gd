@@ -3,15 +3,31 @@ extends CharacterBody2D
 
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
+var is_dead = false
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_crouch: CollisionShape2D = $CollisionCrouch
 @onready var collision_standing: CollisionShape2D = $CollisionStanding
+@onready var ray_cast_attack: RayCast2D = $RayCastAttack
 
 
+func _ready() -> void:
+	add_to_group("Player")
+
+func die():
+	print("die() called")
+	is_dead = true
+	collision_crouch.set_deferred("disabled", true)
+	collision_standing.set_deferred("disabled", true)
 
 func _physics_process(delta: float) -> void:
 	
+	if is_dead:
+		velocity += get_gravity() * delta
+		move_and_slide()
+		return
+	
+	#crouch controls
 	if Input.is_action_pressed("crouch"):
 		collision_crouch.disabled = false
 		collision_standing.disabled = true
@@ -43,12 +59,23 @@ func _physics_process(delta: float) -> void:
 	else:
 		animated_sprite.play("run")
 		
+
 	
 	#applies movememt
 	if direction:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
+	
+	#attack
+	if Input.is_action_just_pressed("attack"):
+		print("attack pressed")
+		if ray_cast_attack.is_colliding():
+			var hit =ray_cast_attack.get_collider()
+			print("attack hit", hit.name)
+			if hit.is_in_group("Enemy"):
+				hit.queue_free()
+	
 		
 	
 

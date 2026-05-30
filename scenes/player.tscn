@@ -21,19 +21,19 @@ region = Rect2(576, 0, 192, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
 atlas = ExtResource("1_3vyb7")
-region = Rect2(0, 192, 192, 192)
+region = Rect2(0, 198, 192, 190)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fjrip"]
 atlas = ExtResource("1_3vyb7")
-region = Rect2(192, 192, 192, 192)
+region = Rect2(192, 198, 192, 190)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_smehm"]
 atlas = ExtResource("1_3vyb7")
-region = Rect2(384, 192, 192, 192)
+region = Rect2(384, 198, 192, 190)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ur7pv"]
 atlas = ExtResource("1_3vyb7")
-region = Rect2(576, 192, 192, 192)
+region = Rect2(576, 198, 192, 190)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tuyoq"]
 animations = [{
@@ -75,7 +75,11 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_fjrip"]
 radius = 8.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
+radius = 5.0
+
 [node name="Player" type="CharacterBody2D" unique_id=1478856254]
+collision_layer = 2
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1411636259]
@@ -84,7 +88,17 @@ scale = Vector2(0.16666667, 0.16666667)
 sprite_frames = SubResource("SpriteFrames_tuyoq")
 animation = &"run"
 autoplay = "idle"
+frame_progress = 0.09807106
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=569626814]
+[node name="CollisionStanding" type="CollisionShape2D" parent="." unique_id=569626814]
 position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_fjrip")
+
+[node name="CollisionCrouch" type="CollisionShape2D" parent="." unique_id=363370461]
+position = Vector2(0, -5)
+shape = SubResource("CircleShape2D_g2els")
+
+[node name="RayCastAttack" type="RayCast2D" parent="." unique_id=1151090087]
+position = Vector2(0, -8)
+scale = Vector2(1, 7)
+target_position = Vector2(32, 0)
