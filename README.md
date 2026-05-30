@@ -19,4 +19,4 @@ The roles that we've decided upon for this jam are listed below:
 |2          |Lead programmer            |fraserHILL            |
 |3          |Sprite & Background art|JONHENDO|
 
-![GitHub Repo Card](https://githubcard.com/JONHENDO/expansion.svg)
+![GitHub Repo Card](https://githubcard.com/g/HOZ6mN_D.svg)
