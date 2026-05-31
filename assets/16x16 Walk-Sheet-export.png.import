@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy2bc12f47tx3"
-path="res://.godot/imported/16x16 Idle-Sheet-export.png-f551d1310acba8d7a40dc1a0bfd3ca6e.ctex"
+uid="uid://chxtq1ghtwhpy"
+path="res://.godot/imported/16x16 Walk-Sheet-export.png-ff2eecafe4a0a080083f87364dbbd652.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/16x16 Idle-Sheet-export.png"
-dest_files=["res://.godot/imported/16x16 Idle-Sheet-export.png-f551d1310acba8d7a40dc1a0bfd3ca6e.ctex"]
+source_file="res://assets/16x16 Walk-Sheet-export.png"
+dest_files=["res://.godot/imported/16x16 Walk-Sheet-export.png-ff2eecafe4a0a080083f87364dbbd652.ctex"]
 
 [params]
 
