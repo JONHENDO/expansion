@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cy2bc12f47tx3" path="res://assets/16x16 Idle-Sheet-export.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://cf6346dkry1xg" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://bpc3tg83h624k" path="res://assets/16x16 Jump-Sheet-export.png" id="3_dqkch"]
 [ext_resource type="Texture2D" uid="uid://chxtq1ghtwhpy" path="res://assets/16x16 Walk-Sheet-export.png" id="3_qhqgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
@@ -19,6 +20,26 @@ region = Rect2(48, 0, 24, 24)
 [sub_resource type="AtlasTexture" id="AtlasTexture_y4r1p"]
 atlas = ExtResource("1_3vyb7")
 region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2wvv"]
+atlas = ExtResource("3_dqkch")
+region = Rect2(0, 22, 24, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3v2ag"]
+atlas = ExtResource("3_dqkch")
+region = Rect2(24, 22, 24, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jej6c"]
+atlas = ExtResource("3_dqkch")
+region = Rect2(48, 22, 24, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1ej7"]
+atlas = ExtResource("3_dqkch")
+region = Rect2(72, 22, 24, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oprun"]
+atlas = ExtResource("3_dqkch")
+region = Rect2(96, 22, 24, 22)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
 atlas = ExtResource("3_qhqgy")
@@ -53,7 +74,27 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 3.0
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2wvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3v2ag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jej6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1ej7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oprun")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -70,7 +111,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 4.0
+"speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fjrip"]
@@ -87,9 +128,9 @@ script = ExtResource("1_g2els")
 position = Vector2(1.1920929e-06, -20)
 scale = Vector2(1.4166667, 1.6666665)
 sprite_frames = SubResource("SpriteFrames_tuyoq")
-animation = &"run"
-autoplay = "run"
-frame_progress = 0.46188602
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.66837394
 
 [node name="CollisionStanding" type="CollisionShape2D" parent="." unique_id=569626814]
 position = Vector2(0, -8)
