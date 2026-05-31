@@ -43,6 +43,7 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		
 
 	#get movement direction (1, 0, -1)
 	var direction := Input.get_axis("move_left", "move_right")
@@ -54,11 +55,12 @@ func _physics_process(delta: float) -> void:
 		animated_sprite.flip_h = true
 		
 	#play animations
-	if direction == 0:
-		animated_sprite.play("idle")
-	else:
+	if not is_on_floor():
+		animated_sprite.play("jump")
+	elif direction !=0:
 		animated_sprite.play("run")
-		
+	else:
+		animated_sprite.play("idle")	
 
 	
 	#applies movememt

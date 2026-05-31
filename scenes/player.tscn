@@ -21,14 +21,6 @@ region = Rect2(48, 0, 24, 24)
 atlas = ExtResource("1_3vyb7")
 region = Rect2(72, 0, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_d2wvv"]
-atlas = ExtResource("3_dqkch")
-region = Rect2(0, 22, 24, 22)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3v2ag"]
-atlas = ExtResource("3_dqkch")
-region = Rect2(24, 22, 24, 22)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_jej6c"]
 atlas = ExtResource("3_dqkch")
 region = Rect2(48, 22, 24, 22)
@@ -78,12 +70,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_d2wvv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3v2ag")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_jej6c")
 }, {
 "duration": 1.0,
@@ -128,9 +114,9 @@ script = ExtResource("1_g2els")
 position = Vector2(0.50000036, -16.000002)
 scale = Vector2(1.3750001, 1.3333333)
 sprite_frames = SubResource("SpriteFrames_tuyoq")
-animation = &"run"
+animation = &"jump"
 autoplay = "idle"
-frame_progress = 0.47364706
+frame_progress = 0.93632716
 
 [node name="CollisionStanding" type="CollisionShape2D" parent="." unique_id=569626814]
 position = Vector2(0, -8)
