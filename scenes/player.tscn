@@ -6,17 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bpc3tg83h624k" path="res://assets/16x16 Jump-Sheet-export.png" id="3_dqkch"]
 [ext_resource type="Texture2D" uid="uid://chxtq1ghtwhpy" path="res://assets/16x16 Walk-Sheet-export.png" id="3_qhqgy"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_d2wvv"]
-atlas = ExtResource("2_qlg0r")
-region = Rect2(4, 24, 23, 24)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_3v2ag"]
 atlas = ExtResource("2_qlg0r")
 region = Rect2(27, 24, 23, 24)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a8ls1"]
-atlas = ExtResource("2_qlg0r")
-region = Rect2(50, 24, 23, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qfm1y"]
 atlas = ExtResource("2_qlg0r")
@@ -74,13 +66,7 @@ region = Rect2(72, 24, 24, 24)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_d2wvv")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_3v2ag")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a8ls1")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qfm1y")
@@ -157,7 +143,7 @@ scale = Vector2(1.3750001, 1.3333333)
 sprite_frames = SubResource("SpriteFrames_tuyoq")
 animation = &"attack"
 autoplay = "idle"
-frame = 4
+frame = 2
 frame_progress = 1.0
 
 [node name="CollisionStanding" type="CollisionShape2D" parent="." unique_id=569626814]
