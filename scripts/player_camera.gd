@@ -98,3 +98,4 @@ func _get_room_center(room: Area2D) -> Vector2:
 		return room.global_position
 	var rect: Rect2 = shape_node.shape.get_rect()
 	return shape_node.global_transform * rect.get_center()
+	
