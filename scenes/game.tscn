@@ -476,7 +476,7 @@ tile_set = SubResource("TileSet_vtaks")
 
 [node name="PlayerCamera" parent="." unique_id=1353435454 instance=ExtResource("2_p57ef")]
 position = Vector2(280, -83)
-zoom = Vector2(1.855, 1.855)
+zoom = Vector2(3, 3)
 process_callback = 0
 
 [node name="Player" parent="." unique_id=1478856254 instance=ExtResource("3_lnu2h")]
