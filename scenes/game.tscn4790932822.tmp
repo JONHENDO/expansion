@@ -32,11 +32,8 @@ texture = ExtResource("1_iywne")
 15:0/0 = 0
 15:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 17:0/0 = 0
-17:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:0/0 = 0
-18:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 19:0/0 = 0
-19:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:1/0 = 0
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:1/0 = 0
@@ -60,11 +57,8 @@ texture = ExtResource("1_iywne")
 15:1/0 = 0
 15:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 17:1/0 = 0
-17:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:1/0 = 0
-18:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 19:1/0 = 0
-19:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:2/0 = 0
 1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:2/0 = 0
@@ -85,11 +79,8 @@ texture = ExtResource("1_iywne")
 15:2/0 = 0
 15:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 17:2/0 = 0
-17:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 18:2/0 = 0
-18:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 19:2/0 = 0
-19:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 6:3/0 = 0
 7:3/0 = 0
 8:3/0 = 0
@@ -456,7 +447,7 @@ sources/1 = SubResource("TileSetAtlasSource_p57ef")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iywne"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iywne"]
-size = Vector2(588.25, 337)
+size = Vector2(608.5, 337)
 
 [node name="Game" type="Node2D" unique_id=1103932222]
 
@@ -475,8 +466,7 @@ tile_map_data = PackedByteArray("AAD+//7/AQAAAAoAAAD///7/AQABAAoAAAAAAP7/AQABAAo
 tile_set = SubResource("TileSet_vtaks")
 
 [node name="PlayerCamera" parent="." unique_id=1353435454 instance=ExtResource("2_p57ef")]
-position = Vector2(280, -83)
-zoom = Vector2(1.855, 1.855)
+position = Vector2(176, -70)
 process_callback = 0
 
 [node name="Player" parent="." unique_id=1478856254 instance=ExtResource("3_lnu2h")]
@@ -496,20 +486,20 @@ position = Vector2(333, -48)
 [node name="Enemy2" parent="." unique_id=295427741 instance=ExtResource("7_u5sy4")]
 position = Vector2(270, -16)
 
-[node name="Screen1" type="Area2D" parent="." unique_id=1364258618 groups=["Room"]]
+[node name="Screen1" type="Area2D" parent="." unique_id=1364258618]
 collision_layer = 128
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Screen1" unique_id=742465702]
-position = Vector2(259.125, -89)
+position = Vector2(273, -88)
 shape = SubResource("RectangleShape2D_iywne")
 debug_color = Color(0.96332806, 1.347661e-06, 0.50219655, 0.41960785)
 
-[node name="Screen2" type="Area2D" parent="." unique_id=1299066963 groups=["Room"]]
+[node name="Screen2" type="Area2D" parent="." unique_id=1299066963]
 collision_layer = 128
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Screen2" unique_id=309543302]
-position = Vector2(848, -89)
+position = Vector2(882, -87)
 shape = SubResource("RectangleShape2D_iywne")
 debug_color = Color(0.96332806, 1.347661e-06, 0.50219655, 0.41960785)
