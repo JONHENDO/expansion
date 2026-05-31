@@ -1,13 +1,17 @@
 extends Area2D
-@onready var timer: Timer = $Timer
+
+const GRACE_PERIOD: float = 0.2
+var _active: bool = false
+
+func _ready() -> void:
+	_active = false
+	await get_tree().create_timer(GRACE_PERIOD).timeout
+	_active = true
 
 func _on_body_entered(body: Node2D) -> void:
-	print("you died")
+	if not _active:
+		return
 	if body.is_in_group("Player"):
+		_active = false
 		body.die()
-		Engine.time_scale = 0.5
-		timer.start()
-	
-func _on_timer_timeout() -> void:
-	Engine.time_scale = 1
-	get_tree().reload_current_scene()
+		Global.begin_death_sequence()

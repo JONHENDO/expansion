@@ -498,7 +498,7 @@ position = Vector2(270, -16)
 
 [node name="Screen1" type="Area2D" parent="." unique_id=1364258618 groups=["Room"]]
 collision_layer = 128
-collision_mask = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Screen1" unique_id=742465702]
 position = Vector2(259.125, -89)
@@ -507,7 +507,7 @@ debug_color = Color(0.96332806, 1.347661e-06, 0.50219655, 0.41960785)
 
 [node name="Screen2" type="Area2D" parent="." unique_id=1299066963 groups=["Room"]]
 collision_layer = 128
-collision_mask = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Screen2" unique_id=309543302]
 position = Vector2(848, -89)

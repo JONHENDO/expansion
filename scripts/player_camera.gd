@@ -1,49 +1,92 @@
+class_name PlayerCamera
 extends Camera2D
-var player_node
-@export var follow_smoothing: float = 0.1
-var smoothing: float
-var current_room: Area2D
-var furthest_room: Area2D
-var respawn_position: Vector2
-@onready var view_size: Vector2 = get_viewport_rect().size
-var zoom_view_size: Vector2
-var needs_snap: bool = false
+
+@export var pan_speed: float = 3.0
+
+var locked: bool = false
+var _panning: bool = false
+var _target_position: Vector2 = Vector2.ZERO
+var _current_room: Area2D = null
+var _ready_done: bool = false
 
 func _ready() -> void:
-	position_smoothing_enabled = false
-	smoothing = 0.05  # slow pan
-	await get_tree().create_timer(1.0).timeout
-	smoothing = follow_smoothing
+	# Synchronous approximate snap so frame 1 is never wrong
+	var rooms := get_tree().get_nodes_in_group("Room")
+	if not rooms.is_empty():
+		var first: Area2D = _get_leftmost_room(rooms)
+		var shape := first.get_node_or_null("CollisionShape2D") as CollisionShape2D
+		if shape:
+			position = first.position + shape.position
+			_target_position = position
+			_current_room = first
+
+	# Wait for physics so global transforms are reliable
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	_snap_to_first_room()
+	_ready_done = true
 
 func _physics_process(delta: float) -> void:
-	if player_node == null:
-		player_node = get_tree().get_first_node_in_group("Player")
+	if not _ready_done or locked or not _panning:
 		return
+	var real_delta := delta / Engine.time_scale
+	position = position.lerp(_target_position, pan_speed * real_delta)
+	if position.distance_to(_target_position) < 0.5:
+		position = _target_position
+		_panning = false
 
-	for room in get_tree().get_nodes_in_group("Room"):
-		var shape = room.get_node("CollisionShape2D")
-		var room_rect = shape.shape.get_rect()
-		var room_global_rect = Rect2(shape.global_position - room_rect.size / 2 - Vector2(2, 2), room_rect.size + Vector2(4, 4))
-		if room_global_rect.has_point(player_node.global_position):
-			if current_room != room:
-				current_room = room
-				if furthest_room == null or room.global_position.x > furthest_room.global_position.x:
-					furthest_room = room
-					respawn_position = player_node.global_position
-			break
-
-	if current_room == null:
+func go_to_room(room: Area2D) -> void:
+	if locked or room == _current_room:
 		return
+	_current_room = room
+	var new_target := _get_room_center(room)
+	var vertical_threshold: float = 8.0
+	if abs(new_target.y - position.y) <= vertical_threshold:
+		new_target.y = position.y
+	_target_position = new_target
+	_panning = true
 
-	var shape = current_room.get_node("CollisionShape2D")
-	var room_rect = shape.shape.get_rect()
-	var room_center = shape.global_transform * room_rect.get_center()
+# Called after reload — start camera at the death position and pan to room 1
+func pan_from(from_position: Vector2) -> void:
+	position = from_position
+	var rooms := get_tree().get_nodes_in_group("Room")
+	if rooms.is_empty():
+		return
+	var first := _get_leftmost_room(rooms)
+	_current_room = first
+	_target_position = _get_room_center(first)
+	_panning = true
 
-	if needs_snap:
-		position = room_center
-		needs_snap = false
-	else:
-		position = lerp(position, room_center, smoothing)
+func current_room() -> Area2D:
+	return _current_room
 
-func snap_to_room():
-	needs_snap = true
+func snap_to_room(room: Area2D) -> void:
+	_current_room = room
+	_panning = false
+	locked = false
+	position = _get_room_center(room)
+
+func _snap_to_first_room() -> void:
+	var rooms := get_tree().get_nodes_in_group("Room")
+	if rooms.is_empty():
+		return
+	var first := _get_leftmost_room(rooms)
+	_current_room = first
+	# Only snap if we are not already panning (e.g. death pan-in)
+	if not _panning:
+		position = _get_room_center(first)
+	_target_position = _get_room_center(first)
+
+func _get_leftmost_room(rooms: Array) -> Area2D:
+	var first: Area2D = rooms[0]
+	for room: Area2D in rooms:
+		if room.global_position.x < first.global_position.x:
+			first = room
+	return first
+
+func _get_room_center(room: Area2D) -> Vector2:
+	var shape_node := room.get_node("CollisionShape2D") as CollisionShape2D
+	if shape_node == null:
+		return room.global_position
+	var rect: Rect2 = shape_node.shape.get_rect()
+	return shape_node.global_transform * rect.get_center()
