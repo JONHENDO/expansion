@@ -46,6 +46,11 @@ func _initialise() -> void:
 		died_away_from_start = false
 		_camera.pan_from(death_room_position)
 
+func is_camera_panning() -> bool:
+	if not is_instance_valid(_camera):
+		return false
+	return _camera.is_room_transition_panning()
+
 func _on_room_body_entered(body: Node2D, room: Area2D) -> void:
 	if not body.is_in_group("Player"):
 		return

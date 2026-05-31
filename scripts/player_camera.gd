@@ -5,6 +5,7 @@ extends Camera2D
 
 var locked: bool = false
 var _panning: bool = false
+var _is_room_transition: bool = false  # true only during player-triggered room transitions
 var _target_position: Vector2 = Vector2.ZERO
 var _current_room: Area2D = null
 var _ready_done: bool = false
@@ -34,9 +35,10 @@ func _physics_process(delta: float) -> void:
 	if position.distance_to(_target_position) < 0.5:
 		position = _target_position
 		_panning = false
+		_is_room_transition = false
 
 func go_to_room(room: Area2D) -> void:
-	if locked or room == _current_room:
+	if locked or _panning or room == _current_room:
 		return
 	_current_room = room
 	var new_target := _get_room_center(room)
@@ -45,8 +47,10 @@ func go_to_room(room: Area2D) -> void:
 		new_target.y = position.y
 	_target_position = new_target
 	_panning = true
+	_is_room_transition = true  # freeze player during this pan
 
 # Called after reload — start camera at the death position and pan to room 1
+# Does NOT freeze the player since they've already respawned
 func pan_from(from_position: Vector2) -> void:
 	position = from_position
 	var rooms := get_tree().get_nodes_in_group("Room")
@@ -56,6 +60,10 @@ func pan_from(from_position: Vector2) -> void:
 	_current_room = first
 	_target_position = _get_room_center(first)
 	_panning = true
+	_is_room_transition = false  # don't freeze player on respawn pan
+
+func is_room_transition_panning() -> bool:
+	return _panning and _is_room_transition
 
 func current_room() -> Area2D:
 	return _current_room
@@ -63,6 +71,7 @@ func current_room() -> Area2D:
 func snap_to_room(room: Area2D) -> void:
 	_current_room = room
 	_panning = false
+	_is_room_transition = false
 	locked = false
 	position = _get_room_center(room)
 
@@ -72,7 +81,6 @@ func _snap_to_first_room() -> void:
 		return
 	var first := _get_leftmost_room(rooms)
 	_current_room = first
-	# Only snap if we are not already panning (e.g. death pan-in)
 	if not _panning:
 		position = _get_room_center(first)
 	_target_position = _get_room_center(first)
