@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://cdfraej6m3jb8"]
+[gd_scene format=4 uid="uid://d3jwdrh4fxo0w"]
 
 [ext_resource type="Texture2D" uid="uid://6wyhravdyxrd" path="res://assets/babytileset1t-export.png" id="1_2noph"]
 [ext_resource type="PackedScene" uid="uid://drkv8hfwq8e6v" path="res://scenes/player.tscn" id="2_vgrb7"]
@@ -471,8 +471,9 @@ position = Vector2(155, -16)
 collision_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=2363379]
-position = Vector2(21, -54)
-zoom = Vector2(2.76, 2.76)
+position = Vector2(1, -33)
+zoom = Vector2(3.87, 3.87)
+position_smoothing_enabled = true
 
 [node name="Killzone" parent="." unique_id=779975342 instance=ExtResource("3_pvpso")]
 
