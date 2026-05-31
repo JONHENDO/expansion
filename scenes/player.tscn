@@ -84,12 +84,12 @@ collision_layer = 2
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1411636259]
-position = Vector2(1.1920929e-06, -16)
-scale = Vector2(1.4166667, 1.3333333)
+position = Vector2(1.1920929e-06, -20)
+scale = Vector2(1.4166667, 1.6666665)
 sprite_frames = SubResource("SpriteFrames_tuyoq")
 animation = &"run"
 autoplay = "run"
-frame_progress = 0.24999182
+frame_progress = 0.46188602
 
 [node name="CollisionStanding" type="CollisionShape2D" parent="." unique_id=569626814]
 position = Vector2(0, -8)
