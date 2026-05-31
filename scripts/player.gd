@@ -55,7 +55,10 @@ func _physics_process(delta: float) -> void:
 		animated_sprite.flip_h = true
 		
 	#play animations
-	if not is_on_floor():
+	if animated_sprite.animation == "attack" and animated_sprite.is_playing():
+		pass
+		
+	elif not is_on_floor():
 		animated_sprite.play("jump")
 	elif direction !=0:
 		animated_sprite.play("run")
@@ -69,9 +72,13 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
+
+	
 	#attack
 	if Input.is_action_just_pressed("attack"):
 		print("attack pressed")
+		animated_sprite.play("attack")
+
 		if ray_cast_attack.is_colliding():
 			var hit =ray_cast_attack.get_collider()
 			print("attack hit", hit.name)
