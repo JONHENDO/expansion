@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://btknbi8o150c7"]
+
+[ext_resource type="Texture2D" uid="uid://6wyhravdyxrd" path="res://assets/babytileset1t-export.png" id="1_ba0x2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlgqw"]
+size = Vector2(48, 4.75)
+
+[node name="Platform" type="AnimatableBody2D" unique_id=425935531]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=940609523]
+texture = ExtResource("1_ba0x2")
+region_enabled = true
+region_rect = Rect2(272.00897, 15.963519, 48.02838, 5.0495977)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=604330194]
+shape = SubResource("RectangleShape2D_nlgqw")
+one_way_collision = true
