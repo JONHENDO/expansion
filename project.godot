@@ -15,19 +15,6 @@ run/main_scene="uid://beamv6cptfwii"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
-[autoload]
-
-Global="*uid://dskef6a80oayw"
-
-[display]
-
-window/size/viewport_width=1920
-window/size/viewport_height=1080
-
-[global_group]
-
-Room=""
-
 [input]
 
 jump={

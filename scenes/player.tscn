@@ -133,8 +133,6 @@ radius = 8.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_g2els"]
 radius = 5.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qlg0r"]
-
 [node name="Player" type="CharacterBody2D" unique_id=1478856254]
 collision_layer = 2
 script = ExtResource("1_g2els")
@@ -160,11 +158,3 @@ shape = SubResource("CircleShape2D_g2els")
 position = Vector2(0, -8)
 scale = Vector2(1, 7)
 target_position = Vector2(32, 0)
-
-[node name="RoomDetector" type="Area2D" parent="." unique_id=1796696667]
-collision_layer = 0
-collision_mask = 128
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RoomDetector" unique_id=1523249357]
-scale = Vector2(1e-05, 1e-05)
-shape = SubResource("RectangleShape2D_qlg0r")
