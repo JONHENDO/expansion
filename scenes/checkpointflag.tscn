@@ -40,7 +40,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Area2D" type="Area2D" unique_id=732221032]
+[node name="checkpointflag" type="Area2D" unique_id=732221032]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1688462541]
 position = Vector2(0, -7)
