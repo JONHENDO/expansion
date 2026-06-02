@@ -472,7 +472,7 @@ position = Vector2(155, -16)
 collision_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1491061773]
-position = Vector2(2, -32)
+position = Vector2(2, -53)
 zoom = Vector2(2.76, 2.76)
 
 [node name="Killzone" parent="." unique_id=779975342 instance=ExtResource("4_lbhrr")]
