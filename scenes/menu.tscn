@@ -119,3 +119,4 @@ stream = ExtResource("6_g3eks")
 autoplay = true
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="Button2" to="Button" method="_on_button_2_pressed"]

@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dli372jgec4ex" path="res://scenes/animatedbear.tscn" id="3_p57ef"]
 [ext_resource type="PackedScene" uid="uid://coxng75upns3p" path="res://scenes/killzone.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://cmxqm0c55i8xu" path="res://scenes/npc.tscn" id="6_p57ef"]
+[ext_resource type="AudioStream" uid="uid://6jabf2oxv8aq" path="res://assets/game.wav" id="7_gee14"]
 [ext_resource type="PackedScene" uid="uid://bu5beqhll8ocn" path="res://scenes/enemy.tscn" id="7_u5sy4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u5sy4"]
@@ -490,3 +491,7 @@ position = Vector2(270, -16)
 
 [node name="AnimatedSprite2D2" parent="." unique_id=845582991 instance=ExtResource("3_p57ef")]
 position = Vector2(325, -29)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1028757518]
+stream = ExtResource("7_gee14")
+autoplay = true

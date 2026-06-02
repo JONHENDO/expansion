@@ -10,3 +10,14 @@ func _on_mouse_entered():
 
 func _on_mouse_exited():
 	$Startclicked.visible = false
+
+
+func _on_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	print("pressed 1")
+	pass # Replace with function body.
+	
+func _on_button_2_pressed() -> void:
+	get_tree().quit()
+	print("pressed 2")
+	pass # Replace with function body.
