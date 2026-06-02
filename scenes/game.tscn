@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://6wyhravdyxrd" path="res://assets/babytileset1t-export.png" id="1_iywne"]
 [ext_resource type="PackedScene" uid="uid://drkv8hfwq8e6v" path="res://scenes/player.tscn" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://dli372jgec4ex" path="res://scenes/animatedbear.tscn" id="3_p57ef"]
 [ext_resource type="PackedScene" uid="uid://coxng75upns3p" path="res://scenes/killzone.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://cmxqm0c55i8xu" path="res://scenes/npc.tscn" id="6_p57ef"]
 [ext_resource type="PackedScene" uid="uid://bu5beqhll8ocn" path="res://scenes/enemy.tscn" id="7_u5sy4"]
@@ -474,6 +475,9 @@ collision_mask = 3
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1491061773]
 position = Vector2(2, -53)
 zoom = Vector2(2.76, 2.76)
+
+[node name="AnimatedSprite2D2" parent="Player" unique_id=845582991 instance=ExtResource("3_p57ef")]
+position = Vector2(170, -13)
 
 [node name="Killzone" parent="." unique_id=779975342 instance=ExtResource("4_lbhrr")]
 

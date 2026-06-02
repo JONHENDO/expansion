@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://dli372jgec4ex"]
+
+[ext_resource type="Texture2D" uid="uid://ybql3kkj87xl" path="res://assets/bearanim.png" id="1_sb7fo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kattp"]
+atlas = ExtResource("1_sb7fo")
+region = Rect2(0, 19, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5av1b"]
+atlas = ExtResource("1_sb7fo")
+region = Rect2(0, 51, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hfdcn"]
+atlas = ExtResource("1_sb7fo")
+region = Rect2(48, 51, 24, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1g1ot"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kattp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5av1b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hfdcn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=845582991]
+sprite_frames = SubResource("SpriteFrames_1g1ot")
+autoplay = "default"
+frame_progress = 0.9572279
