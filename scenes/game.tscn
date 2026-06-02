@@ -476,6 +476,9 @@ collision_mask = 3
 position = Vector2(2, -53)
 zoom = Vector2(2.76, 2.76)
 
+[node name="AnimatedSprite2D2" parent="Player" unique_id=845582991 instance=ExtResource("3_p57ef")]
+position = Vector2(170, -13)
+
 [node name="Killzone" parent="." unique_id=779975342 instance=ExtResource("4_lbhrr")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=1677591072]
@@ -487,6 +490,3 @@ position = Vector2(333, -48)
 
 [node name="Enemy2" parent="." unique_id=295427741 instance=ExtResource("7_u5sy4")]
 position = Vector2(270, -16)
-
-[node name="AnimatedSprite2D2" parent="." unique_id=845582991 instance=ExtResource("3_p57ef")]
-position = Vector2(325, -29)
