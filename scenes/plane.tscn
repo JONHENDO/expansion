@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://df7es58suwgu"]
+
+[ext_resource type="Texture2D" uid="uid://buoe56i0eitin" path="res://assets/toyplane.png" id="1_dt3pm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_206p1"]
+atlas = ExtResource("1_dt3pm")
+region = Rect2(0, 4, 100, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md2q8"]
+atlas = ExtResource("1_dt3pm")
+region = Rect2(0, 52, 100, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n0b6s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_206p1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md2q8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="plane" type="AnimatedSprite2D" unique_id=1059568784]
+sprite_frames = SubResource("SpriteFrames_n0b6s")
+frame_progress = 0.8414225
