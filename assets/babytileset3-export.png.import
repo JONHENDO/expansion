@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://hd5tx7iqqv7e"
-path="res://.godot/imported/babytileset3.png-c0ef3130a5d7d02d97dbc56d6bf1833f.ctex"
+uid="uid://cyeijana5u8sj"
+path="res://.godot/imported/babytileset3-export.png-4d8778af190df7ac147dd548c9f869f7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/babytileset3.png"
-dest_files=["res://.godot/imported/babytileset3.png-c0ef3130a5d7d02d97dbc56d6bf1833f.ctex"]
+source_file="res://assets/babytileset3-export.png"
+dest_files=["res://.godot/imported/babytileset3-export.png-4d8778af190df7ac147dd548c9f869f7.ctex"]
 
 [params]
 
