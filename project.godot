@@ -21,8 +21,8 @@ Global="*uid://dskef6a80oayw"
 
 [display]
 
-window/size/viewport_width=384
-window/size/viewport_height=216
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [global_group]
 
