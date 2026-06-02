@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cjbwu5m64fc2d"]
+
+[ext_resource type="Texture2D" uid="uid://duhvjvjlui11q" path="res://assets/sunanimated.png" id="1_cojbh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdjia"]
+atlas = ExtResource("1_cojbh")
+region = Rect2(18, 12, 78, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gpmc"]
+atlas = ExtResource("1_cojbh")
+region = Rect2(96, 12, 78, 67)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vtvjq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdjia")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6gpmc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="Sun" type="AnimatedSprite2D" unique_id=760957516]
+sprite_frames = SubResource("SpriteFrames_vtvjq")
+frame_progress = 0.2330186
