@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://drkv8hfwq8e6v" path="res://scenes/player.tscn" id="2_vgrb7"]
 [ext_resource type="PackedScene" uid="uid://coxng75upns3p" path="res://scenes/killzone.tscn" id="3_pvpso"]
 [ext_resource type="PackedScene" uid="uid://bu5beqhll8ocn" path="res://scenes/enemy.tscn" id="4_pvpso"]
-[ext_resource type="PackedScene" uid="uid://btknbi8o150c7" path="res://scenes/platform.tscn" id="5_xy7x2"]
+[ext_resource type="PackedScene" path="res://scenes/platform.tscn" id="5_xy7x2"]
 [ext_resource type="PackedScene" uid="uid://do5u2a11y2phx" path="res://scenes/checkpointflag.tscn" id="6_1e84e"]
 [ext_resource type="PackedScene" uid="uid://df7es58suwgu" path="res://scenes/plane.tscn" id="8_1r0rx"]
 [ext_resource type="PackedScene" uid="uid://dli372jgec4ex" path="res://scenes/animatedbear.tscn" id="9_4cbcb"]
@@ -636,7 +636,7 @@ sources/3 = SubResource("TileSetAtlasSource_3n2f7")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xy7x2"]
 
 [sub_resource type="Animation" id="Animation_3n2f7"]
-length = 0.001
+length = 12.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -644,10 +644,10 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3.001349, 3.4666667, 3.7984009, 4.3464456, 4.766667, 5.1666665, 5.5666666, 5.9333334, 6.233333, 6.460157, 6.6430016, 6.8, 7.1763024, 7.5715723, 8.048406, 8.983251, 9.529099, 10.049852, 10.539234),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(1639, 178)]
+"values": [Vector2(1639, 178), Vector2(1979, 163), Vector2(2382, 136), Vector2(2985.0002, 70.999985), Vector2(3320.0002, -111.00003), Vector2(3581, -440), Vector2(3667, -757.99994), Vector2(3652.0002, -1129.0001), Vector2(3463, -1468.9999), Vector2(3201.0002, -1694), Vector2(2744, -1795.9999), Vector2(2384.0002, -1684.0001), Vector2(2212, -1587.0001), Vector2(2054, -1451), Vector2(1930.9999, -1211), Vector2(1856, -858.99994), Vector2(1904, -536.00006), Vector2(2021.9999, -295.00006), Vector2(2422.0002, 5.0000153), Vector2(2789.0002, 80.00001), Vector2(3223.0002, -34.999924), Vector2(4028, -556.99994), Vector2(4436, -533.00006), Vector2(4694, -488.00006), Vector2(4899, -484)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -656,10 +656,10 @@ tracks/1/path = NodePath(".:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2, 2.5, 3.001349, 3.4666667, 3.7984009, 4.3464456, 4.766667, 5.1666665, 5.5666666, 5.9333334, 6.233333, 6.460157, 6.6430016, 6.8, 7.1763024, 7.5715723, 8.048406, 8.983251, 9.529099, 10.049852, 10.539234),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0]
+"values": [0.0, -0.17090648, -0.17090648, -0.3722095, -0.61589533, -1.0960455, -1.4776891, -1.9091533, -2.3356962, -2.713746, -3.2867503, -3.75655, -4.0147214, -4.2033954, -4.46217, -4.833696, -5.1504846, -5.422494, -5.8596582, -6.3176355, -6.7402215, -6.7402215, -6.7402215, -6.3699565, -6.2831855]
 }
 
 [sub_resource type="Animation" id="Animation_yomc2"]
