@@ -696,8 +696,6 @@ _data = {
 &"plane_spin": SubResource("Animation_yomc2")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_m2w3k"]
-
 [node name="BabyLevel" type="Node2D" unique_id=1022048968]
 
 [node name="terrain" type="TileMapLayer" parent="." unique_id=22423468]
@@ -804,12 +802,3 @@ theme_override_colors/font_color = Color(0.012617188, 0.012617188, 0.012617188, 
 text = "'Space' to Jump"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Area2D" type="Area2D" parent="." unique_id=652552033]
-position = Vector2(2203, -561)
-scale = Vector2(20, 16)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1501518497]
-position = Vector2(28.600002, -18.0625)
-scale = Vector2(-4.100821, -5.2960434)
-shape = SubResource("CircleShape2D_m2w3k")
